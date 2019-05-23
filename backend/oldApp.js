@@ -3,22 +3,22 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-// //Connection to database
-// mongoose
-//   .connect("mongodb://localhost/miniredd", {
-//     useNewUrlParser: true
-//   })
-//   .then(() => {
-//     console.log("Connected to mongoDB...");
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+//Connection to database
+mongoose
+  .connect("mongodb://localhost/miniredd", {
+    useNewUrlParser: true
+  })
+  .then(() => {
+    console.log("Connected to mongoDB...");
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 //Load the post controller
 
 //Load the post schema
-require("./Models/Posts/Post");
+require("./Models/Post/Post");
 const Post = mongoose.model("post");
 
 //Index route
