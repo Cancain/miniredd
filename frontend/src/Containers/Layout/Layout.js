@@ -1,12 +1,15 @@
 import React from "react";
 import Content from "../Content/Content";
+import Router from "../../hoc/Router/Router";
 
 import "./Layout.css";
 
 function Layout() {
   return (
     <div className="App">
-      <Content />
+      <Content>
+        <Router />
+      </Content>
     </div>
   );
 }

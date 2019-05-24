@@ -21,6 +21,17 @@ router.get("/", (req, res) => {
     });
 });
 
+//Adds a post to the database
+router.post("/", (req, res) => {
+  req.setHeader("Access-Control-Allow-Origin", "*");
+  // req.setHeader("Content-Type", "application/json");
 
+  const newPost = {
+    title: req.query.title,
+    content: req.query.content
+  };
+
+  console.log(newPost);
+});
 
 module.exports = router;
