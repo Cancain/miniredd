@@ -9,7 +9,7 @@ const Post = props => {
         <p style={{ color: "green" }} onClick={() => console.log("upvote")}>
           {"<"}
         </p>
-        <div style={{fontSize: "2rem"}} >0</div>
+        <div style={{ fontSize: "2rem" }}>{props.points}</div>
         <p style={{ color: "red" }} onClick={() => console.log("downvote")}>
           {">"}
         </p>

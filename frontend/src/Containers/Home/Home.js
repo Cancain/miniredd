@@ -30,7 +30,15 @@ const Home = props => {
     renderPosts = posts.map(post => {
       const title = post.title;
       const id = post._id;
-      return <Post key={id} title={title} clicked={() => showPost(id)} />;
+      const points = post.points;
+      return (
+        <Post
+          key={id}
+          points={points}
+          title={title}
+          clicked={() => showPost(id)}
+        />
+      );
     });
   }
 
