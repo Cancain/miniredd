@@ -12,9 +12,13 @@ const AddPost = props => {
       title: title,
       content: content
     };
-    api.post("/posts", data).then(res => {
-      console.log(res.data);
-    });
+
+    api
+      .post("/posts", data)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
   };
 
   const renderForm = (
