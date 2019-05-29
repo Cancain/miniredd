@@ -11,5 +11,10 @@
   "dependencies": {
     "express": "^4.17.0",
     "mongoose": "^5.5.11"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
   }
 }

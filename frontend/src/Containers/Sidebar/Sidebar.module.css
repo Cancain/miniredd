@@ -1,0 +1,15 @@
+.Sidebar {
+  width: 80%;
+  height: 100%;
+  z-index: 100;
+  position: absolute;
+  background: green;
+}
+
+.Open {
+  left: 0;
+}
+
+.Closed {
+  left: -80%;
+}

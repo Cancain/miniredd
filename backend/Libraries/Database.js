@@ -1,14 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-//Connection to database
+// Connection to database
 mongoose
-  .connect("mongodb://localhost/miniredd", {
-    useNewUrlParser: true
+  .connect('mongodb://localhost/miniredd', {
+    useNewUrlParser: true,
   })
   .then(() => {
-    console.log("Connected to mongoDB...");
+    // eslint-disable-next-line no-console
+    console.log('Connected to mongoDB...');
   })
-  .catch(err => {
+  .catch((err) => {
+    // eslint-disable-next-line no-console
     console.log(err);
   });
 

@@ -1,0 +1,14 @@
+.Content {
+  background: gray;
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.Content p {
+  margin: 0 5px;
+}
+
+.Content h1 {
+  margin: 0;
+}

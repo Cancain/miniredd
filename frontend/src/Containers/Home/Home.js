@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { api } from "../../Axios/ApiIntance";
 
 const Home = props => {
@@ -16,9 +16,11 @@ const Home = props => {
     });
   };
 
-  let renderposts = null;
+  const renderLoading = <h3>Loading...</h3>;
+
+  let renderPosts = renderLoading;
   if (postsLoaded) {
-    renderposts = posts.map(post => {
+    renderPosts = posts.map(post => {
       const title = post.title;
       const content = post.content;
       const id = post._id;
@@ -31,8 +33,9 @@ const Home = props => {
     });
   }
 
-  if (renderposts) return renderposts;
-  return null;
+  let renderPage = <Fragment>{renderPosts}</Fragment>;
+
+  return renderPage;
 };
 
 export default Home;
