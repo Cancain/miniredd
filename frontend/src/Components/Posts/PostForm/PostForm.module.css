@@ -1,0 +1,35 @@
+.PostForm div {
+  display: flex;
+  flex-flow: column;
+  margin-top: 10px;
+}
+
+.PostForm input,
+.PostForm textarea,
+.PostForm button {
+  border-radius: 7px;
+  border: 0;
+  padding: 5px;
+  font-size: 1.4rem;
+  margin: auto;
+}
+
+.PostForm input {
+  text-align: center;
+  width: 65%;
+}
+
+.PostForm textarea {
+  height: 200px;
+  width: 90%;
+}
+
+.PostForm label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2.5px;
+}
+
+.PostForm button {
+  margin-top: 5px;
+}

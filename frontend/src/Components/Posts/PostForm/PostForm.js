@@ -1,8 +1,10 @@
 import React from "react";
 
+import style from "./PostForm.module.css";
+
 const PostForm = props => {
   return (
-    <React.Fragment>
+    <div className={style.PostForm}>
       <form>
         <div>
           <label>Title</label>
@@ -19,9 +21,9 @@ const PostForm = props => {
             onChange={e => props.content(e.target.value)}
           />
         </div>
-        <input type="button" onClick={props.submitClicked} value="Submit" />
+        <button onClick={props.submitClicked}>Submit</button>
       </form>
-    </React.Fragment>
+    </div>
   );
 };
 

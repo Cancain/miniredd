@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import classes from "./RouterLink.module.css";
 
@@ -10,8 +10,18 @@ const RouterLink = props => {
     margin: props.margin
   };
 
+  const linkClicked = () => {
+    props.clicked(props.to);
+    props.history.push(props.to);
+  };
+
   const link = (
-    <Link className={classes.RouterLink} style={linkStyle} to={props.to}>
+    <Link
+      className={classes.RouterLink}
+      style={linkStyle}
+      to={props.to}
+      onClick={() => linkClicked()}
+    >
       {props.text}
     </Link>
   );
@@ -25,11 +35,16 @@ const RouterLink = props => {
       : "rgba(0,0,0,3)",
     width: props.width ? props.width : "fit-content",
     height: props.height ? props.height : "fit-content",
-    margin: props.margin
+    margin: props.margin,
+    cursor: "pointer"
   };
 
   const button = (
-    <div style={buttonStyle} className={classes.Button}>
+    <div
+      style={buttonStyle}
+      className={classes.Button}
+      onClick={() => linkClicked()}
+    >
       {link}
     </div>
   );
@@ -41,4 +56,4 @@ const RouterLink = props => {
   return link;
 };
 
-export default RouterLink;
+export default withRouter(RouterLink);

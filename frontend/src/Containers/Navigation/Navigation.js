@@ -6,8 +6,8 @@ import style from "./Navigation.module.css";
 
 const Navigation = props => {
   const navItems = [
-    { text: "Home", link: "/" },
-    { text: "Add Post", link: "/addpost" }
+    { text: "Home", link: "/", active: false },
+    { text: "Add Post", link: "/addpost", active: false }
   ];
 
   const renderNavItems = navItems.map(item => {
@@ -15,10 +15,11 @@ const Navigation = props => {
       <RouterLink
         isButton
         width="90%"
-        margin="0 0 10px 0"
+        margin="1.5px auto 1.5px auto"
         key={item.text}
         text={item.text}
         to={item.link}
+        clicked={to => console.log(to)}
       />
     );
   });
