@@ -28,7 +28,6 @@ const AddPost = props => {
         content={value => setContent(value)}
         submitClicked={() => sendPost()}
       />
-      <button onClick={() => console.log(`${title}, ${content}`)}>test</button>
     </div>
   );
 

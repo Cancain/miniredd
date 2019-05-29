@@ -24,13 +24,21 @@ router.get('/', (req, res) => {
 
 // Adds a post to the database
 router.post('/', (req, res) => {
-  const newPost = {
-    title: req.query.title,
-    content: req.query.content,
-  };
+  console.log(`Recived POST, status code: ${res.statusCode}`);
+  const newPost = new Post({
+    title: req.body.title,
+    content: req.body.content,
+  });
 
-  console.log(res.statusCode);
-  console.log(req.body);
+  newPost
+    .save()
+    .then(() => {
+      console.log(`Post added: ${newPost}`);
+      res.end();
+    })
+    .catch((err) => {
+      res.end(err);
+    });
 });
 
 // Route for adding a test post ---->REMOVE THIS LATER<----
