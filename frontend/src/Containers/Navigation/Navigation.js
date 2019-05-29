@@ -19,14 +19,14 @@ const Navigation = props => {
         key={item.text}
         text={item.text}
         to={item.link}
-        clicked={to => console.log(to)}
+        clicked={() => props.navClicked()}
       />
     );
   });
 
   const renderNavigation = (
     <Fragment>
-      <h2>Navigation</h2>
+      <h1>Menu</h1>
       <div className={style.NavItems}>{renderNavItems}</div>
     </Fragment>
   );

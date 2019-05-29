@@ -9,7 +9,7 @@ import Navigation from "../Navigation/Navigation";
 
 import "./Layout.css";
 
-function Layout() {
+const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,7 +18,7 @@ function Layout() {
 
   const renderSidebar = (
     <Sidebar open={sidebarOpen}>
-      <Navigation />
+      <Navigation navClicked={() => toggleSidebar()} />
     </Sidebar>
   );
 
@@ -38,6 +38,6 @@ function Layout() {
   );
 
   return renderLayout;
-}
+};
 
 export default Layout;

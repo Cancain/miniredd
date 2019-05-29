@@ -41,20 +41,4 @@ router.post('/', (req, res) => {
     });
 });
 
-// Route for adding a test post ---->REMOVE THIS LATER<----
-router.get('/test', (req, res) => {
-  const newPost = new Post({
-    title: 'Test post...',
-    content: 'This is a test post. Lorem ipsum and all his friends walks into a bar...',
-  });
-  newPost
-    .save()
-    .then((post) => {
-      res.redirect('/');
-    })
-    .catch((err) => {
-      throw err;
-    });
-});
-
 module.exports = router;

@@ -11,7 +11,7 @@ const RouterLink = props => {
   };
 
   const linkClicked = () => {
-    props.clicked(props.to);
+    props.clicked();
     props.history.push(props.to);
   };
 

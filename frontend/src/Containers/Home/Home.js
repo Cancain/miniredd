@@ -1,5 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { api } from "../../Axios/ApiIntance";
+import { withRouter } from "react-router-dom";
+
+import Post from "../../Components/Posts/Post/Post";
 
 const Home = props => {
   const [posts, setPosts] = useState();
@@ -8,6 +11,10 @@ const Home = props => {
   useEffect(() => {
     if (!postsLoaded) getPosts();
   });
+
+  const showPost = id => {
+    props.history.push(`/posts/${id}`);
+  };
 
   const getPosts = () => {
     api.get("/posts").then(res => {
@@ -22,14 +29,8 @@ const Home = props => {
   if (postsLoaded) {
     renderPosts = posts.map(post => {
       const title = post.title;
-      const content = post.content;
       const id = post._id;
-      return (
-        <div key={id}>
-          <h1>{title}</h1>
-          <p>{content}</p>
-        </div>
-      );
+      return <Post key={id} title={title} clicked={() => showPost(id)} />;
     });
   }
 
@@ -38,4 +39,4 @@ const Home = props => {
   return renderPage;
 };
 
-export default Home;
+export default withRouter(Home);

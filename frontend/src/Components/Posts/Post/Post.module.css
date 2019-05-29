@@ -1,0 +1,35 @@
+.Post {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 5px 0;
+  padding: 20px;
+}
+
+.Post h1 {
+  margin: auto 0 auto 10px;
+}
+
+.Clickable {
+  display: flex;
+  flex-flow: column;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.Arrows {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.Post p {
+  transform: rotate(90deg);
+  font-size: 3rem;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: -10px 0 -10px 0;
+  z-index: 99;
+  pointer-events: fill;
+}
