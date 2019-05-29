@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import style from "./Sidebar.module.css";
 
 const Sidebar = props => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
   const sideBarClasses = [
     style.Sidebar,
-    sidebarOpen ? style.Open : style.Closed
+    props.open ? style.Open : style.Closed
   ];
 
   let renderSidebar = (
