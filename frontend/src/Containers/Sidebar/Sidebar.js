@@ -11,6 +11,7 @@ const Sidebar = props => {
   let renderSidebar = (
     <div className={sideBarClasses.join(" ")}>
       <h1>Sidebar</h1>
+      {props.children}
     </div>
   );
 
