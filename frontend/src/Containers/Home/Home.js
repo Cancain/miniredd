@@ -13,7 +13,7 @@ const Home = props => {
   });
 
   const showPost = id => {
-    props.history.push(`/posts/${id}`);
+    props.history.push(`/fullpost/${id}`);
   };
 
   const getPosts = () => {

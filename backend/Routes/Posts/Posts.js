@@ -1,17 +1,17 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
 // Load the database and the post model
-const database = require('../../Libraries/Database');
-require('../../Models/Post/Post');
+const database = require("../../Libraries/Database");
+require("../../Models/Post/Post");
 
-const Post = database.model('post');
+const Post = database.model("post");
 
 router.use(express.json());
 
 // Posts index, loads all posts and ouputs in json
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   Post.find({})
     .then((posts) => {
       console.log(`${Date.now()}: All posts loaded from database...`);
@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 });
 
 // Adds a post to the database
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   console.log(`Recived POST, status code: ${res.statusCode}`);
   const newPost = new Post({
     title: req.body.title,
@@ -38,6 +38,19 @@ router.post('/', (req, res) => {
     })
     .catch((err) => {
       res.end(err);
+    });
+});
+
+// Path for showing a certain post
+router.get("/:id", (req, res) => {
+  Post.findOne({ _id: req.params.id })
+    .then((post) => {
+      const json = JSON.stringify(post);
+      console.log(`${Date.now()}: Post with id ${req.params.id} loaded`);
+      res.end(json);
+    })
+    .catch((err) => {
+      throw err;
     });
 });
 

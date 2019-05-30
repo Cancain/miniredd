@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import MobileMenuBtn from "../../Components/UI/MobileMenuBtn/MobileMenuBtn";
 import Navigation from "../Navigation/Navigation";
+import Backdrop from "../../Components/Backdrop/Backdrop";
 
 import "./Layout.css";
 
@@ -22,15 +23,20 @@ const Layout = () => {
     </Sidebar>
   );
 
+  let renderBackdrop = null;
+  if (sidebarOpen)
+    renderBackdrop = <Backdrop clicked={() => toggleSidebar()} />;
+
   const renderContent = (
     <Content>
+      {renderBackdrop}
       <Header />
       <Router />
     </Content>
   );
 
   const renderLayout = (
-    <div className="App">
+    <div className="Layout">
       <MobileMenuBtn clicked={() => toggleSidebar()} />
       {renderSidebar}
       {renderContent}

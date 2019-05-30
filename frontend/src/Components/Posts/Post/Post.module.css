@@ -30,6 +30,6 @@
   font-weight: bolder;
   cursor: pointer;
   margin: -10px 0 -10px 0;
-  z-index: 99;
+  z-index: 98;
   pointer-events: fill;
 }

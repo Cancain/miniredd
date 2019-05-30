@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
@@ -18,4 +18,4 @@ const PostSchema = new Schema({
   },
 });
 
-mongoose.model('post', PostSchema);
+mongoose.model("post", PostSchema);
