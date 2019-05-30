@@ -54,4 +54,9 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.post("/vote", (req, res) => {
+  console.log(`Recived POST, status code: ${res.statusCode}`);
+  console.log(req.body);
+});
+
 module.exports = router;

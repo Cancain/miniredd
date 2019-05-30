@@ -33,6 +33,7 @@ const Home = props => {
       const points = post.points;
       return (
         <Post
+          id={id}
           key={id}
           points={points}
           title={title}
