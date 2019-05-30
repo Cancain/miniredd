@@ -28,16 +28,15 @@ const Home = props => {
   let renderPosts = renderLoading;
   if (postsLoaded) {
     renderPosts = posts.map(post => {
-      const title = post.title;
-      const id = post._id;
-      const points = post.points;
+      const { title, _id, points, content } = post;
       return (
         <Post
-          id={id}
-          key={id}
+          id={_id}
+          content={content}
+          key={_id}
           points={points}
           title={title}
-          clicked={() => showPost(id)}
+          clicked={() => showPost(_id)}
         />
       );
     });

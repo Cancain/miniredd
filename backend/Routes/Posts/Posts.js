@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const express = require("express");
 
 const router = express.Router();
@@ -50,13 +51,35 @@ router.get("/:id", (req, res) => {
       res.end(json);
     })
     .catch((err) => {
+      res.end(err);
       throw err;
     });
 });
 
 router.post("/vote", (req, res) => {
   console.log(`Recived POST, status code: ${res.statusCode}`);
-  console.log(req.body);
+  // console.log(req.body);
+
+  const { postId, isUpVote } = req.body;
+
+  Post.findOne({ _id: postId })
+    .then((post) => {
+      const oldPoints = post.points;
+      let newPoints = null;
+
+      if (isUpVote) {
+        newPoints = oldPoints + 1;
+      } else {
+        newPoints = oldPoints - 1;
+      }
+
+      post.points = newPoints;
+
+      console.log(post);
+
+      post.save().then(console.log("post updated"));
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

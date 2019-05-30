@@ -7,7 +7,9 @@ const Post = props => {
   const vote = isUpvote => {
     const vote = {
       postId: props.id,
-      isUpVote: isUpvote
+      isUpVote: isUpvote,
+      title: props.title,
+      content: props.content
     };
 
     api
