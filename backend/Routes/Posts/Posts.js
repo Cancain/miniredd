@@ -78,6 +78,7 @@ router.post("/vote", (req, res) => {
       console.log(post);
 
       post.save().then(console.log("post updated"));
+      res.end(JSON.stringify(newPoints));
     })
     .catch(err => console.log(err));
 });

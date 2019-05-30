@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { api } from "../../../Axios/ApiIntance";
 
 import style from "./Post.module.css";
 
 const Post = props => {
+  const [points, setPoints] = useState(null);
+
   const vote = isUpvote => {
     const vote = {
       postId: props.id,
@@ -15,7 +17,8 @@ const Post = props => {
     api
       .post(`/posts/vote`, vote)
       .then(res => {
-        console.log(res.data);
+        //Update state with the new ammont of points
+        setPoints(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -28,7 +31,7 @@ const Post = props => {
         <p style={{ color: "green" }} onClick={() => vote(true)}>
           {"<"}
         </p>
-        <div style={{ fontSize: "2rem" }}>{props.points}</div>
+        <div style={{ fontSize: "2rem" }}>{points ? points : props.points}</div>
         <p style={{ color: "red" }} onClick={() => vote(false)}>
           {">"}
         </p>
