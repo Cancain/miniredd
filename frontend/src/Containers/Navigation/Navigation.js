@@ -30,7 +30,9 @@ const Navigation = props => {
 
   const renderNavigation = (
     <Fragment>
-      <h1>Menu</h1>
+      <div className={style.Headline}>
+        <h1>Menu</h1>
+      </div>
       <div className={style.NavItems}>{renderNavItems}</div>
     </Fragment>
   );

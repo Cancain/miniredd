@@ -3,3 +3,16 @@
   flex-flow: column;
   align-content: center;
 }
+
+.Headline {
+  background: #030933;
+  top: 0;
+  height: 70px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.Headline h1 {
+  margin: auto;
+}
