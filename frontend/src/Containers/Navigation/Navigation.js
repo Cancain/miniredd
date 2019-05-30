@@ -15,11 +15,15 @@ const Navigation = props => {
       <RouterLink
         isButton
         width="90%"
+        height="40px"
+        fontSize="2rem"
+        color="gainsboro"
         margin="1.5px auto 1.5px auto"
         key={item.text}
         text={item.text}
         to={item.link}
         clicked={() => props.navClicked()}
+        backgroundColor="rgba(0, 0, 0, 0.8)"
       />
     );
   });

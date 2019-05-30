@@ -1,9 +1,9 @@
 .Sidebar {
   width: 80%;
   height: 100%;
-  z-index: 100;
-  position: absolute;
-  background: green;
+  z-index: 200;
+  position: fixed;
+  background: #101c69;
 }
 
 .Open {

@@ -1,6 +1,10 @@
 .Header {
-  width: 100%;
+  width: 95%;
   height: 70px;
-  background: yellow;
+  background: #030933;
   border: 1 px solid black;
+  position: fixed;
+  z-index: 99;
+  margin-top: -1px;
+  top: 0;
 }

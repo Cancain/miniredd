@@ -1,9 +1,9 @@
 .Content {
-  background: gray;
+  background: #101c69;
   width: 95%;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   border: 1px solid black;
-  padding-bottom: 20px;
+  padding: 70px 0 20px 0;
 }
 
 .Content p {
