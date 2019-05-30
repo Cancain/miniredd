@@ -2,10 +2,27 @@
   width: 95%;
   height: 70px;
   background: #030933;
-  border: 1 px solid black;
+  border: 1px solid black;
   position: fixed;
   z-index: 99;
   margin-top: -1px;
   top: 0;
+  box-shadow: 3px 3px 3px #030615;
+}
 
+.LogoContainer {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 1024px) {
+  .Header {
+    width: 100vw;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+  }
+
+  .LogoContainer {
+    margin-top: 0;
+    grid-column: 1;
+  }
 }

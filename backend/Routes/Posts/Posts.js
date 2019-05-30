@@ -56,9 +56,9 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Path fot upvotes/downvotes for posts
 router.post("/vote", (req, res) => {
   console.log(`Recived POST, status code: ${res.statusCode}`);
-  // console.log(req.body);
 
   const { postId, isUpVote } = req.body;
 
@@ -78,6 +78,8 @@ router.post("/vote", (req, res) => {
       console.log(post);
 
       post.save().then(console.log("post updated"));
+
+      // Send update with the new ammount of votes
       res.end(JSON.stringify(newPoints));
     })
     .catch(err => console.log(err));

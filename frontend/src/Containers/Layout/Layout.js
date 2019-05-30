@@ -8,6 +8,8 @@ import MobileMenuBtn from "../../Components/UI/MobileMenuBtn/MobileMenuBtn";
 import Navigation from "../Navigation/Navigation";
 import Backdrop from "../../Components/Backdrop/Backdrop";
 
+import { breakpoint, width } from "../../config";
+
 import "./Layout.css";
 
 const Layout = () => {
@@ -17,11 +19,14 @@ const Layout = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const renderSidebar = (
-    <Sidebar open={sidebarOpen}>
-      <Navigation navClicked={() => toggleSidebar()} />
-    </Sidebar>
-  );
+  let renderSidebar = null;
+  if (width <= breakpoint) {
+    renderSidebar = (
+      <Sidebar open={sidebarOpen}>
+        <Navigation navClicked={() => toggleSidebar()} />
+      </Sidebar>
+    );
+  }
 
   let renderBackdrop = null;
   if (sidebarOpen)

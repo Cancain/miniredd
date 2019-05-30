@@ -18,12 +18,12 @@ const Navigation = props => {
         height="40px"
         fontSize="2rem"
         color="gainsboro"
-        margin="1.5px auto 1.5px auto"
+        margin="2.5px auto 2px auto"
         key={item.text}
         text={item.text}
         to={item.link}
         clicked={() => props.navClicked()}
-        backgroundColor="rgba(0, 0, 0, 0.8)"
+        backgroundColor="rgba(0, 0, 0, 0.4)"
       />
     );
   });
@@ -33,6 +33,12 @@ const Navigation = props => {
       <div className={style.Headline}>
         <h1>Menu</h1>
       </div>
+      <div className={style.NavItems}>{renderNavItems}</div>
+    </Fragment>
+  );
+
+  const renderNavigationBig = (
+    <Fragment>
       <div className={style.NavItems}>{renderNavItems}</div>
     </Fragment>
   );
