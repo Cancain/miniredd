@@ -25,11 +25,17 @@
 }
 
 .PostForm label {
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2.5px;
 }
 
 .PostForm button {
   margin-top: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .PostForm textarea {
+    height: 60vh;
+  }
 }
