@@ -24,19 +24,16 @@ const Input = props => {
   const input = (
     <div className={style.Input}>
       {renderLabel}
-      <input
-        style={inputStyle}
-        onChange={event => props.text(event.target.value)}
-      />
+      <input style={inputStyle} onChange={e => props.changed(e.target.value)} />
     </div>
   );
 
   const textArea = (
     <div className={style.Input}>
       {renderLabel}
-      <textArea
+      <textarea
         style={inputStyle}
-        onChange={event => props.text(event.target.value)}
+        onChange={e => props.changed(e.target.value)}
       />
     </div>
   );

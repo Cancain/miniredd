@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { api } from "../../../Axios/ApiIntance";
 
-import PostForm from "../../../Components/Posts/PostForm/PostForm";
+import PostForm from "../../../Components/Forms/PostForm/PostForm";
 
 const AddPost = props => {
   const [title, setTitle] = useState();
