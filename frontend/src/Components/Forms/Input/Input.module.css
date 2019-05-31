@@ -1,0 +1,41 @@
+.Input div {
+  display: flex;
+  flex-flow: column;
+  margin-top: 10px;
+}
+
+.Input input,
+.Input textarea,
+.Input button {
+  border-radius: 7px;
+  border: 0;
+  padding: 5px;
+  font-size: 1.4rem;
+  margin: auto;
+}
+
+.Input input {
+  text-align: center;
+  width: 65%;
+}
+
+.Input textarea {
+  height: 200px;
+  width: 90%;
+}
+
+.Input label {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2.5px;
+}
+
+.Input button {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .Input textarea {
+    height: 60vh;
+  }
+}
