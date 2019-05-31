@@ -19,3 +19,10 @@
   margin: auto;
   font-size: 2.5rem;
 }
+
+@media only screen and (min-width: 1024px) {
+  .NavItems {
+    flex-flow: row;
+    align-content: flex-start;
+  }
+}

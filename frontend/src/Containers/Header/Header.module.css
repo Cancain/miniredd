@@ -18,7 +18,11 @@
     width: 100vw;
     left: 0;
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 2fr 8fr;
+  }
+
+  .NavigationContainer {
+    grid-column: 2;
   }
 
   .LogoContainer {

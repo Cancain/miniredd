@@ -16,12 +16,7 @@ const RouterLink = props => {
   };
 
   const link = (
-    <Link
-      className={classes.RouterLink}
-      style={linkStyle}
-      to={props.to}
-      onClick={() => linkClicked()}
-    >
+    <Link className={classes.RouterLink} style={linkStyle} to={props.to}>
       {props.text}
     </Link>
   );
@@ -52,7 +47,6 @@ const RouterLink = props => {
   if (props.isButton) {
     return button;
   }
-
   return link;
 };
 
